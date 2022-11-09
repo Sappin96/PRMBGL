@@ -1,0 +1,31 @@
+div#map{
+    width: 90vw; 
+    height: 90vh; 
+    margin: auto; 
+    top: 5vh;
+    box-shadow: 2px 2px 20px #000000;
+}
+
+body{
+    background-color: #272727;
+}
+
+#buttons {
+    width: 90vw;
+    margin: 0 auto;
+}
+.button {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 14vw;
+    padding: 8px;
+    border-radius: 3px;
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #ee8a65;
+    font-family: sans-serif;
+    font-weight: bold;
+}
