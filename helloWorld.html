@@ -9,18 +9,18 @@
         <script>
         mapboxgl.accessToken = 'pk.eyJ1Ijoic2FwcGluIiwiYSI6ImNrczRpMm0zaDI2Y3YycW1yZmN5NHcybnMifQ.GwDSN1HIpY5gCZTlY4ne1w';
         const map = new mapboxgl.Map({
-            container: 'map', // container ID
-            style: 'mapbox://styles/mapbox/streets-v11', // style URL
-            center: [1.730094, 41.221421], // starting position [lng, lat]
-            zoom: 9, // starting zoom
-            projection: 'naturalEarth' // display the map as a 3D globe
+            container: 'map',
+            // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+            style: 'mapbox://styles/mapbox/satellite-streets-v11',
+            zoom: 1.5,
+            center: [30, 50],
+            projection: 'globe'
         });
-        map.on('style.load', () => {
-        map.setFog({}); // Set the default atmosphere style
-        });
-        map.addControl(
-            new mapboxgl.NavigationControl());
 
+        map.on('load', () => {
+            // Set the default atmosphere style
+            map.setFog({});
+        });
         </script>
     </body>
 </html>

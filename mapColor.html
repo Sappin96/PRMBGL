@@ -8,6 +8,13 @@
     </head>
     <body>
         <div id='map'></div>
+        <ul id="buttons">
+            <li id="button-light-v10" class="button2">Light</li>
+            <li id="button-dark-v10" class="button2">Dark</li>
+            <li id="button-streets-v11" class="button2">Streets</li>
+            <li id="button-outdoors-v11" class="button2">Outdoors</li>
+            <li id="button-satellite-v9" class="button2">Satellite</li>
+        </ul>
         <script>
             mapboxgl.accessToken = 'pk.eyJ1Ijoic2FwcGluIiwiYSI6ImNrczRpMm0zaDI2Y3YycW1yZmN5NHcybnMifQ.GwDSN1HIpY5gCZTlY4ne1w';
             const map = new mapboxgl.Map({
@@ -21,16 +28,14 @@
             map.setFog({}); // Set the default atmosphere style
             });
 
-            map.addControl(
-                new MapboxDirections({
-                    accessToken: mapboxgl.accessToken,
-                }),
-                'top-left'
-            );
-
-            map.addControl(
-                new mapboxgl.NavigationControl()),
-                'top-right';
+            document.getElementById('buttons').addEventListener('click', (event) => {
+                console.log("aaa");
+                const style = event.target.id.substr('button-'.length);
+                // Use setLayoutProperty to set the value of a layout property in a style layer.
+                // The three arguments are the id of the layer, the name of the layout property,
+                // and the new property value.
+                map.setStyle('mapbox://styles/mapbox/' + style);
+            });
 
         </script>
     </body>

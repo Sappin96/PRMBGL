@@ -4,10 +4,18 @@
         <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
         <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
         <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
+
         <link href='css/maps.css' rel='stylesheet' />
     </head>
     <body>
         <div id='map'></div>
+        <ul id="buttons">
+            <li id="button-en" class="button">English</li>
+            <li id="button-es" class="button">Spanish</li>
+            <li id="button-fr" class="button">French</li>
+            <li id="button-de" class="button">German</li>
+            <li id="button-ru" class="button">Russian</li>
+        </ul>
         <script>
             mapboxgl.accessToken = 'pk.eyJ1Ijoic2FwcGluIiwiYSI6ImNrczRpMm0zaDI2Y3YycW1yZmN5NHcybnMifQ.GwDSN1HIpY5gCZTlY4ne1w';
             const map = new mapboxgl.Map({
@@ -24,14 +32,28 @@
             map.addControl(
                 new MapboxDirections({
                     accessToken: mapboxgl.accessToken,
+                    language: 'es',
+                    unit: "metric"
                 }),
                 'top-left'
             );
 
             map.addControl(
-                new mapboxgl.NavigationControl()),
-                'top-right';
+                new mapboxgl.NavigationControl());
+                
 
+            document.getElementById('buttons').addEventListener('click', (event) => {
+                console.log("aaa");
+                const language = event.target.id.substr('button-'.length);
+                // Use setLayoutProperty to set the value of a layout property in a style layer.
+                // The three arguments are the id of the layer, the name of the layout property,
+                // and the new property value.
+                map.setLayoutProperty('country-label', 'text-field', [
+                    'get',
+                    `name_${language}`
+                ]);
+
+            });
         </script>
     </body>
 </html>

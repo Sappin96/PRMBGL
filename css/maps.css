@@ -1,8 +1,8 @@
 div#map{
     width: 90vw; 
     height: 90vh; 
-    margin: auto; 
-    top: 5vh;
+    margin: 0 auto; 
+    top: 7vh;
     box-shadow: 2px 2px 20px #000000;
 }
 
@@ -11,21 +11,85 @@ body{
 }
 
 #buttons {
-    width: 90vw;
+    width: 80vw;
+    top : 0;
+    left: 5vw;
+    right: 5vw;
+    position: absolute;
     margin: 0 auto;
 }
+
 .button {
     display: inline-block;
     position: relative;
+
     cursor: pointer;
     width: 14vw;
-    padding: 8px;
+    padding: 0.5vw;
     border-radius: 3px;
     margin-top: 10px;
     font-size: 12px;
     text-align: center;
     color: #fff;
-    background: #ee8a65;
+    background: #4c59d1;
     font-family: sans-serif;
     font-weight: bold;
+}
+
+.button2 {
+    display: inline-block;
+    position: relative;
+
+    cursor: pointer;
+    width: 14vw;
+    padding: 0.5vw;
+    border-radius: 3px;
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #575757;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+#caixa{
+    background-color: white;
+    width: 40vw;
+    position: absolute;
+    top: 1.5vh;
+    left: 30vw;
+    right: 30vw;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#pvila {
+background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Pla%C3%A7a_de_la_Vila_de_Vilanova_i_la_Geltr%C3%BA.JPG/300px-Pla%C3%A7a_de_la_Vila_de_Vilanova_i_la_Geltr%C3%BA.JPG');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#macia {
+    background-image: url('https://www.vilanova.cat/content/Directori/40126/1/MONUMENTAFRANCESCMACIA1.JPG');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+}
+#antoni {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Esgl%C3%A9sia_parroquial_de_Sant_Antoni_Abat.JPG/300px-Esgl%C3%A9sia_parroquial_de_Sant_Antoni_Abat.JPG');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+}
+   
+.mapboxgl-popup {
+    max-width: 200px;
 }
