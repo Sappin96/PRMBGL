@@ -7,10 +7,6 @@
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
 <link href='css/maps.css' rel='stylesheet' />
-<style>
-body { margin: 0; padding: 0; }
-#map { position: absolute; top: 0; bottom: 0; width: 100%; }
-</style>
 </head>
 <body>
 <script src="https://unpkg.com/three@0.126.0/build/three.min.js"></script>
@@ -30,7 +26,7 @@ body { margin: 0; padding: 0; }
 
     // parameters to ensure the model is georeferenced correctly on the map
     const modelOrigin = [148.9819, -35.39847];
-    const modelAltitude = 0;
+    const modelAltitude = 2;
     const modelRotate = [Math.PI / 2, 0, 0];
 
     const modelAsMercatorCoordinate = mapboxgl.MercatorCoordinate.fromLngLat(
